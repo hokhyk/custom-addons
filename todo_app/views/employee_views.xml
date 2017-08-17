@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_todo_task_inherited" model="ir.ui.view">
+            <field name="name">Todo Task form - Employee extension</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <field name="bank_account_id" position="before">
+                    <field name="bank" />
+                </field>
+
+                <field name="address_home_id" position="before">
+                    <field name="member_no" />
+                </field>
+
+                <field name="gender" position="before">
+                    <field name="school" />
+                    <field name="education"/>
+                    <field name="political_status"/>
+                    <field name="census"/>
+                </field>
+
+                <field name="user_id" position="after">
+                    <field name="emergency_name" />
+                    <field name="emergency_tel" />
+                    <field name="emergency_contact" />
+                    <field name="remark" />
+                </field>
+
+
+
+                <!--<xpath expr="//field[@name]='user_id'" position="after">-->
+                    <!--<field name="emergency_name" />-->
+                    <!--<field name="emergency_tel" />-->
+                    <!--<field name="emergency_contact" />-->
+                <!--</xpath>-->
+
+            </field>
+        </record>
+    </data>
+</odoo>
