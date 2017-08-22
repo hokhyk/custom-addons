@@ -16,8 +16,9 @@ class TodoEmployee(models.Model):
 
     emergency_name = fields.Char(u'紧急联系人', required=False)
     emergency_tel = fields.Char(u'紧急联系电话', required=False)
-    emergency_contact = fields.Char(u'紧急联系wechat/QQ', required=False)
-
+    # emergency_contact = fields.Char(u'紧急联系wechat/QQ', required=False)
+    qq = fields.Char(u'QQ', required=False)
+    wechat = fields.Char(u'微信', required=False)
     remark = fields.Text(u'备注')
 
 

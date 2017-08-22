@@ -25,10 +25,12 @@
                 <field name="user_id" position="after">
                     <field name="emergency_name" />
                     <field name="emergency_tel" />
-                    <field name="emergency_contact" />
-                    <field name="remark" />
+                    <field name="remark"/>
                 </field>
-
+                <field name="work_phone" position="before">
+                    <field name="qq" />
+                    <field name="wechat"/>
+                </field>
 
 
                 <!--<xpath expr="//field[@name]='user_id'" position="after">-->
