@@ -21,4 +21,4 @@ class TodoEmployee(models.Model):
     wechat = fields.Char(u'微信', required=False)
     remark = fields.Text(u'备注')
 
-
+    company_id = fields.Many2one('res.company', string='公司')
