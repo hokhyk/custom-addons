@@ -32,11 +32,21 @@
                     <field name="wechat"/>
                 </field>
 
+                <page name="hr_settings" position="after">
+                    <page name="file_information" string="电子档合约">
+                        <group>
+                            <group string='试用期评价表' name="trail">
+                                <field name="trial_attachments" widget="many2many_binary" string="Attach a file" nolabel="1" colspan="2"/>
+                            </group>
+                        </group>
+
+                    </page>
+                </page>
 
                 <!--<xpath expr="//field[@name]='user_id'" position="after">-->
-                    <!--<field name="emergency_name" />-->
-                    <!--<field name="emergency_tel" />-->
-                    <!--<field name="emergency_contact" />-->
+                <!--<field name="emergency_name" />-->
+                <!--<field name="emergency_tel" />-->
+                <!--<field name="emergency_contact" />-->
                 <!--</xpath>-->
 
             </field>

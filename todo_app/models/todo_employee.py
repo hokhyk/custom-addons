@@ -22,3 +22,7 @@ class TodoEmployee(models.Model):
     remark = fields.Text(u'备注')
 
     company_id = fields.Many2one('res.company', string='公司')
+
+    trial_attachments = fields.Many2many('ir.attachment', 'trail_ir_attachments_rel',
+        'trail_id', 'attachment_id', 'Attachments')
+
