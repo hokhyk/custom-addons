@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="">
+            <field name="name"></field>
+            <field name=""></field>
+            <field name="groups"></field>
+            <field name="domai_force"></field>
+        </record>
+    </data>
+</odoo>

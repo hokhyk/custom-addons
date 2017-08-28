@@ -6,11 +6,9 @@
             <field name="model">hr.employee</field>
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
-
                 <field name="bank_account_id" position="before">
                     <field name="bank" />
                 </field>
-
                 <field name="address_home_id" position="before">
                     <field name="member_no" />
                 </field>
@@ -35,8 +33,17 @@
                 <page name="hr_settings" position="after">
                     <page name="file_information" string="电子档合约">
                         <group>
-                            <group string='试用期评价表' name="trail">
-                                <field name="trial_attachments" widget="many2many_binary" string="Attach a file" nolabel="1" colspan="2"/>
+                            <group string='试用期评价表' name="trial">
+                                <field name="trial_attachments" widget="many2many_binary" string="试用期评价表" nolabel="1" />
+                            </group>
+                            <group string='入职证明' name="entry">
+                                <field name="entry_attachments" widget="many2many_binary" string="入职证明表" nolabel="1"/>
+                            </group>
+                            <group string='离职证明' name="quit">
+                                <field name="quit_attachments" widget="many2many_binary" string="离职证明表" nolabel="1"/>
+                            </group>
+                            <group string='收入证明' name="income">
+                                <field name="income_attachments" widget="many2many_binary" string="收入证明表" nolabel="1"/>
                             </group>
                         </group>
 
@@ -51,5 +58,18 @@
 
             </field>
         </record>
+
+        <!--<record id="view_form_todo_kanban_inherited" model="ir.ui.view">-->
+            <!--<field name="name">Todo Kanban form - Employee extension</field>-->
+            <!--<field name="model">hr.employee</field>-->
+            <!--<field name="inherit_id" ref="hr.hr_kanban_view_employees"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<field name="name" position="after">-->
+                    <!--<filter name="filter_my_tasks" string="My Tasks" domain="[('hr.employee.company_id','in',[user.company.id])]" />-->
+                <!--</field>-->
+            <!--</field>-->
+        <!--</record>-->
+
+
     </data>
 </odoo>

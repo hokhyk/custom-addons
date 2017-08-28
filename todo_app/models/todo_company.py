@@ -16,12 +16,6 @@ class TodoCompany(models.Model):
     @api.depends('employee_ids')
     def _compute_employee_numbers(self):
 
-        # company = self.search(['company_id','=',str(self.id)])
-        #
-        # employee_numbers = len(company)
-
-        # sql = "select count(*) from resource"
-
         for r in self:
             # self.employee_numbers = len(r.employee_ids)
             self.employee_numbers = 0
@@ -32,5 +26,20 @@ class TodoCompany(models.Model):
             if self.employee_numbers == 0:
                 self.sudo().write({'company_contract': u'2'})
 
+    # def _compute_employee_numbers(self):
+    #
+    #     info  = self.env['hr.employee']
+    #
+    #     count = 0
+    #     for i in info:
+    #
+    #         if i :
+    #             count+=1
+    #     # res1  = self.env['re']
+    #
+    #     # info.search(['company_id.id','=',str(self.id)])
 
 
+        # length = len(info)
+        #
+        # self.employee_numbers = 0
