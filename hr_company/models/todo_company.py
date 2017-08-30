@@ -26,20 +26,3 @@ class TodoCompany(models.Model):
             if self.employee_numbers == 0:
                 self.sudo().write({'company_contract': u'2'})
 
-    # def _compute_employee_numbers(self):
-    #
-    #     info  = self.env['hr.employee']
-    #
-    #     count = 0
-    #     for i in info:
-    #
-    #         if i :
-    #             count+=1
-    #     # res1  = self.env['re']
-    #
-    #     # info.search(['company_id.id','=',str(self.id)])
-
-
-        # length = len(info)
-        #
-        # self.employee_numbers = 0
