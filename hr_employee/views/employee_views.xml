@@ -50,25 +50,30 @@
                     </page>
                 </page>
 
-                <!--<xpath expr="//field[@name]='user_id'" position="after">-->
-                <!--<field name="emergency_name" />-->
-                <!--<field name="emergency_tel" />-->
-                <!--<field name="emergency_contact" />-->
-                <!--</xpath>-->
-
             </field>
         </record>
 
-        <!--<record id="view_form_todo_kanban_inherited" model="ir.ui.view">-->
-            <!--<field name="name">Todo Kanban form - Employee extension</field>-->
+        <!--<record id="view_form_todo_task_inherited" model="ir.ui.view">-->
+            <!--<field name="name">Todo Task form - update extension</field>-->
             <!--<field name="model">hr.employee</field>-->
-            <!--<field name="inherit_id" ref="hr.hr_kanban_view_employees"/>-->
+            <!--<field name="inherit_id" ref="hr.view_employee_form"/>-->
             <!--<field name="arch" type="xml">-->
-                <!--<field name="name" position="after">-->
-                    <!--<filter name="filter_my_tasks" string="My Tasks" domain="[('hr.employee.company_id','in',[user.company.id])]" />-->
-                <!--</field>-->
             <!--</field>-->
         <!--</record>-->
+
+        <record id="hr.menu_hr_department_tree" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('base.group_company_user'),ref('base.group_send_company_user')])]"/>
+        </record>
+
+        <delete model="res.groups" search="[('id','=',ref('hr.group_hr_user'))]" />
+
+        <record id="hr_contract.hr_menu_contract_type" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('base.group_company_user'),ref('base.group_send_company_user')])]"/>
+        </record>
+
+         <record id="hr_contract.hr_menu_contract" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('base.group_company_user'),ref('base.group_send_company_user'),ref('hr.group_hr_manager')])]"/>
+        </record>
 
 
     </data>

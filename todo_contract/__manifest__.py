@@ -2,7 +2,7 @@
 
 {
      'name': 'To-Do Contract',
-     'description': 'Contract Extension',
+     'description': 'Todo Contract Extension',
      'author': 'John',
      'depends': ['hr','resource','base'],
 
