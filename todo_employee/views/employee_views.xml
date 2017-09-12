@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr.group_hr_user" model="res.groups">
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+        <record id="base.group_user" model="res.groups">
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+        <record id="base.menu_administration" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user'),ref('base.group_erp_manager')])]"/>
+        </record>
+
+        <record id="base.menu_users" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user'),ref('base.group_erp_manager')])]"/>
+        </record>
+
+        <record id="base.menu_action_res_users" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('base.group_erp_manager')])]"/>
+        </record>
+
+        <!--set Leaves invisible-->
+
+        <record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]"/>
+        </record>
+
+
+        <record id="hr.menu_hr_department_tree" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('todo_company_user'),ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"/>
+        </record>
+
+        <record id="hr_contract.hr_menu_contract_type" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('todo_company_user'),ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"/>
+        </record>
+
+        <record id="hr_contract.hr_menu_contract" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('todo_company_user'),ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"/>
+        </record>
+
+
+        <record id="view_form_todo_task_inherited" model="ir.ui.view">
+            <field name="name">Todo Task form - Employee extension</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="bank_account_id" position="before">
+                    <field name="bank" />
+                </field>
+                <field name="address_home_id" position="before">
+                    <field name="member_no" />
+                </field>
+
+                <field name="gender" position="before">
+                    <field name="school" />
+                    <field name="education"/>
+                    <field name="political_status"/>
+                    <field name="census"/>
+                </field>
+
+                <field name="user_id" position="after">
+                    <field name="emergency_name" />
+                    <field name="emergency_tel" />
+                </field>
+                <field name="work_phone" position="before">
+                    <field name="qq" />
+                    <field name="wechat"/>
+                </field>
+
+                <page name="hr_settings" position="after">
+                    <page name="file_information" string="电子档合约" groups_id="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user'),ref('todo_company_user')])]">
+                        <group>
+                            <group string='试用期评价表' name="trial">
+                                <field name="trial_attachments" widget="many2many_binary" string="试用期评价表" nolabel="1" />
+                            </group>
+                            <group string='入职证明' name="entry">
+                                <field name="entry_attachments" widget="many2many_binary" string="入职证明表" nolabel="1"/>
+                            </group>
+                            <group string='离职证明' name="quit">
+                                <field name="quit_attachments" widget="many2many_binary" string="离职证明表" nolabel="1"/>
+                            </group>
+                            <group string='收入证明' name="income">
+                                <field name="income_attachments" widget="many2many_binary" string="收入证明表" nolabel="1"/>
+                            </group>
+                        </group>
+
+                    </page>
+                </page>
+
+                <div name="button_box" position="inside">
+                    <button name="toggle_leaves"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-group"
+                            attrs="{'invisible': [('active','=', True)]}"
+                            groups_id="[(6, 0, [ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"
+                    >
+                        <field name="leave_status"
+                               widget="leaves_button"
+                               options='{"terminology": "leaves"}'
+                        />
+                    </button>
+                </div>
+
+                <field name="show_leaves" position="replace">
+                    <field name="show_leaves" invisible="1" ></field>
+                </field>
+
+                <button name="toggle_active" position="attributes">
+
+                    <attribute name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user')])]" />
+                    <!--<attribute name="name" eval="toggle_active_new" />-->
+                </button>
+
+
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -2,6 +2,7 @@
 <odoo>
     <data>
 
+
         <record id="rule_company_user" model="ir.rule">
             <field name="name">查看当前用户公司所属员工</field>
             <field name="model_id" ref="model_hr_employee" />
@@ -15,6 +16,7 @@
             <field name="domain_force">[('employee_id.company_id','=',user.company_id.id)]</field>
             <field name="global" eval="True"/>
         </record>
+
 
     </data>
 </odoo>

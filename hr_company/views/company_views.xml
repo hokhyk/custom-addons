@@ -12,9 +12,20 @@
                 <field name="partner_id" position="before">
                     <field name="compile_number" />
                     <field name="employee_numbers" />
-                    <field name ="company_contract" />
-
+                    <field name="company_contract" />
                 </field>
+
+                <field name="website" position="after">
+
+                    <field name="leader_name" />
+                    <field name="leader_tel" />
+                    <field name="leader_work_tel" />
+
+                    <field name="leader_name_1" />
+                    <field name="leader_tel_1" />
+                    <field name="leader_work_tel_1" />
+                </field>
+
             </field>
         </record>
 

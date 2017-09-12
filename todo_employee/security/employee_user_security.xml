@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--<record id="todo_company_user" model="res.groups">-->
+        <!--<field name="name">公司</field>-->
+        <!--<field name="category_id" ref="base.module_category_human_resources"/>-->
+        <!--<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+        <!--<field name="comment">the user will be able to approve document created by company stuff.</field>-->
+    <!--</record>-->
+
+    <record id="todo_send_company_user" model="res.groups">
+        <field name="name">派遣专员</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+        <field name="comment">人资公司派遣业务负责人</field>
+    </record>
+
+    <record id="todo_company_user" model="res.groups">
+        <field name="name">用工单位接口人</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+        <field name="comment">用工单位系统对接人员</field>
+    </record>
+
+    <record id="todo_company_user_leader" model="res.groups">
+        <field name="name">用工单位负责领导</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">用工单位领导人</field>
+    </record>
+
+
+    <record id="todo_send_user_leader" model="res.groups">
+        <field name="name">派遣业务主管</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+        <field name="comment">人资公司派遣专员主管</field>
+    </record>
+
+
+    <record id="todo_hr_management_leader" model="res.groups">
+        <field name="name">人事代理部部长</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+        <field name="comment">人事代理部部长</field>
+    </record>
+
+
+    <record id="todo_integrated_department_leader" model="res.groups">
+        <field name="name">综合管理部部长</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">综合管理部部长</field>
+    </record>
+
+
+    <record id="todo_finance_department_leader" model="res.groups">
+        <field name="name">财务管理部部长</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">财务管理部部长</field>
+    </record>
+
+    <record id="todo_finance_department_cashier" model="res.groups">
+        <field name="name">财务管理部出纳</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">财务管理部出纳</field>
+    </record>
+
+    <record id="todo_general_manager" model="res.groups">
+        <field name="name">总经理</field>
+        <field name="category_id" ref="base.module_category_human_resources" />
+        <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+        <field name="comment">总经理</field>
+    </record>
+
+
+    <!--<record id="hr.group_hr_manager" model="res.groups">-->
+        <!--<field name="implied_ids" eval="[(4, [ref('hr.group_hr_user')]" />-->
+    <!--</record>-->
+
+</odoo>
