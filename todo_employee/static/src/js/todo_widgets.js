@@ -53,4 +53,5 @@ odoo.define('web.form_widgets', function (require) {
 
 core.form_widget_registry.add('leaves_button', LeavesButton)
 
+
 });

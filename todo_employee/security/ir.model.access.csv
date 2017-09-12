@@ -5,6 +5,7 @@ access_group_emp_company_user_leader,hr.employee.company.user.leader,hr.model_hr
 access_group_emp_manager,hr.employee.manager.user,hr.model_hr_employee,hr.group_hr_manager,1,1,1,1
 access_group_emp_send_user,hr.employee.send.user,hr.model_hr_employee,todo_send_company_user,1,1,1,1
 access_group_emp_hr,hr.employee.hr.user,hr.model_hr_employee,hr.group_hr_user,1,0,0,0
+hr.access_hr_employee_user,hr.employee user,hr.model_hr_employee,hr.group_hr_user,1,0,0,0
 
 access_group_job_manager,hr.job.manager.user,hr.model_hr_job,hr.group_hr_manager,1,1,1,1
 
