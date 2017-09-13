@@ -11,15 +11,21 @@
         </record>
 
         <record id="base.menu_administration" model="ir.ui.menu">
-            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user'),ref('base.group_erp_manager')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),
+            ref('todo_send_company_user'),ref('todo_send_user_leader'),ref('todo_general_manager'),
+            ref('todo_hr_management_leader'),ref('base.group_erp_manager')])]"/>
         </record>
 
         <record id="base.menu_users" model="ir.ui.menu">
-            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user'),ref('base.group_erp_manager')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),
+            ref('todo_send_company_user'),ref('todo_send_user_leader'),ref('todo_general_manager'),
+            ref('todo_hr_management_leader'),ref('base.group_erp_manager')])]"/>
         </record>
 
         <record id="base.menu_action_res_users" model="ir.ui.menu">
-            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('base.group_erp_manager')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),
+            ref('todo_send_company_user'),ref('todo_send_user_leader'),ref('todo_general_manager'),
+            ref('todo_hr_management_leader'),ref('base.group_erp_manager')])]"/>
         </record>
 
         <!--set Leaves invisible-->
@@ -30,15 +36,21 @@
 
 
         <record id="hr.menu_hr_department_tree" model="ir.ui.menu">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('todo_company_user'),ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),
+            ref('todo_company_user'),ref('todo_send_company_user'),ref('todo_general_manager'),
+            ref('todo_send_user_leader'),ref('todo_hr_management_leader'),ref('hr.group_hr_manager')])]"/>
         </record>
 
         <record id="hr_contract.hr_menu_contract_type" model="ir.ui.menu">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('todo_company_user'),ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),
+            ref('todo_company_user'),ref('todo_send_company_user'),ref('todo_general_manager'),
+            ref('todo_send_user_leader'),ref('todo_hr_management_leader'),ref('hr.group_hr_manager')])]"/>
         </record>
 
         <record id="hr_contract.hr_menu_contract" model="ir.ui.menu">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),ref('todo_company_user'),ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'),
+            ref('todo_company_user'),ref('todo_send_company_user'),ref('todo_general_manager'),
+            ref('todo_send_user_leader'),ref('todo_hr_management_leader'),ref('hr.group_hr_manager')])]"/>
         </record>
 
 
@@ -71,7 +83,9 @@
                 </field>
 
                 <page name="hr_settings" position="after">
-                    <page name="file_information" string="电子档合约" groups_id="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user'),ref('todo_company_user')])]">
+                    <page name="file_information" string="电子档合约" groups_id="[(6, 0, [ref('hr.group_hr_manager'),
+                    ref('todo_send_user_leader'),ref('todo_send_company_user'),ref('todo_general_manager'),
+                    ref('todo_company_user')])]">
                         <group>
                             <group string='试用期评价表' name="trial">
                                 <field name="trial_attachments" widget="many2many_binary" string="试用期评价表" nolabel="1" />
@@ -96,7 +110,9 @@
                             class="oe_stat_button"
                             icon="fa-group"
                             attrs="{'invisible': [('active','=', True)]}"
-                            groups_id="[(6, 0, [ref('todo_send_company_user'),ref('hr.group_hr_manager')])]"
+                            groups_id="[(6, 0, [ref('todo_send_company_user'),ref('todo_general_manager'),
+                            ref('todo_hr_management_leader'),ref('todo_send_user_leader'),
+                            ref('hr.group_hr_manager')])]"
                     >
                         <field name="leave_status"
                                widget="leaves_button"
@@ -111,11 +127,13 @@
 
                 <button name="toggle_active" position="attributes">
 
-                    <attribute name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user')])]" />
+                    <attribute name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_user_leader'),ref('todo_hr_management_leader'),ref('todo_send_company_user')])]" />
                     <!--<attribute name="name" eval="toggle_active_new" />-->
                 </button>
 
-
+                <!--<button name="hr_contract.Contracts" position="attributes">-->
+                    <!--<attribute name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager'),ref('todo_send_company_user')])]" />-->
+                <!--</button>-->
 
             </field>
         </record>

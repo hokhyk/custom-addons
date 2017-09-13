@@ -3,20 +3,20 @@ odoo.define('web.form_widgets', function (require) {
 
     var ajax = require('web.ajax');
     var core = require('web.core');
-    var crash_manager = require('web.crash_manager');
-    var data = require('web.data');
-    var datepicker = require('web.datepicker');
-    var dom_utils = require('web.dom_utils');
-    var Priority = require('web.Priority');
-    var ProgressBar = require('web.ProgressBar');
-    var Dialog = require('web.Dialog');
+    // var crash_manager = require('web.crash_manager');
+    // var data = require('web.data');
+    // var datepicker = require('web.datepicker');
+    // var dom_utils = require('web.dom_utils');
+    // var Priority = require('web.Priority');
+    // var ProgressBar = require('web.ProgressBar');
+    // var Dialog = require('web.Dialog');
     var common = require('web.form_common');
-    var formats = require('web.formats');
-    var framework = require('web.framework');
-    var Model = require('web.DataModel');
-    var pyeval = require('web.pyeval');
-    var session = require('web.session');
-    var utils = require('web.utils');
+    // var formats = require('web.formats');
+    // var framework = require('web.framework');
+    // var Model = require('web.DataModel');
+    // var pyeval = require('web.pyeval');
+    // var session = require('web.session');
+    // var utils = require('web.utils');
 
     var _t = core._t;
     var QWeb = core.qweb;
@@ -52,6 +52,5 @@ odoo.define('web.form_widgets', function (require) {
 
 
 core.form_widget_registry.add('leaves_button', LeavesButton)
-
 
 });

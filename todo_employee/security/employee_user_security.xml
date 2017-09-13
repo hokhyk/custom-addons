@@ -25,7 +25,7 @@
     <record id="todo_company_user_leader" model="res.groups">
         <field name="name">用工单位负责领导</field>
         <field name="category_id" ref="base.module_category_human_resources" />
-        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="comment">用工单位领导人</field>
     </record>
 

@@ -2,9 +2,9 @@
 <!-- path_to_your_module/views/assets.xml -->
 <odoo>
     <data>
-        <template id="assets_backend" name="buttonassets" inherit_id="web.assets_backend">
+        <template id="assets_backend" name="button_assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
-                <script type="text/javascript" src="/hr_employee/static/src/js/todo_widgets.js"></script>
+                <script type="text/javascript" src="/todo_employee/static/src/js/todo_widgets.js"></script>
             </xpath>
         </template>
     </data>
